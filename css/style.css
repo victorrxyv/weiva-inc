@@ -74,7 +74,7 @@
     color: white;
     border: none;
     padding: 10;
-    font-size: 21px;
+    font-size: 24px;
     cursor: pointer;
   }
 
@@ -93,6 +93,8 @@
     .menu-hamburger {
       display: block;
     }
+
+
 
     .nav-links {
       display: none;
