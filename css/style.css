@@ -21,6 +21,7 @@
     justify-content: space-between !important;
     padding: 10px;
     background-color: var(--cor-principal);
+    border-bottom: 0.5px solid white;
   }
 
   .menu-hamburger {
