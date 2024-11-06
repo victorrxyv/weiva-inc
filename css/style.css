@@ -19,9 +19,6 @@
     background: linear-gradient(to bottom, rgba(255, 225, 255, 0) 20%, rgba(255, 225, 255, 1));
     background-size: cover;
   }
-<<<<<<< Updated upstream
-  
-=======
 
   .menu-hamburger {
     display: none;
@@ -153,4 +150,3 @@
   .overlay.show {
     display: block;
   }
->>>>>>> Stashed changes
