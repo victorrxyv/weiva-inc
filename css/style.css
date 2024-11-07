@@ -20,7 +20,7 @@ body {
   padding: 10px;
 }
 
-#tag {
+#cesta{
   color: var(--cor-principal);
 }
 
@@ -44,4 +44,35 @@ body {
 .pharm-desc span {
   color: #ffcf00 !important;
   font-size: 19px;
+}
+
+.products {
+  margin-top: 10px;
+  padding: 5px;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .pharm-user {
+    padding: 0px 0px 0px 15px;
+  }
+
+  .pharm-user img {
+    width: 30px;
+  }
+
+  .pharm-desc p {
+    font-size: 14px;
+}
+ .pharm-desc span {
+    font-size: 10px;
+}
+
+  .pharm-theme p {
+    font-size: 11px !important;
+  }
+
 }
