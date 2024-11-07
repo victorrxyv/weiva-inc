@@ -94,7 +94,7 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div class="carousel-item active" id="carrosel">
         <img src="./img/moderna.jpg" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
@@ -118,7 +118,12 @@
 
 <!--fim do carrosel-->
 
-<!---->
+<!--sessão de produtos adicionados ao estoque-->
+
+  <section class="new-stock">
+    <h3><i class="bi bi-tags-fill"></i> Adicionados ao estoque recentemente!</h3>
+  </section>
+
 
 <!--nav bar mobile-->
 
@@ -150,7 +155,7 @@
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('overlay');
       sidebar.classList.toggle('open');
-      overlay.classList.toggle('show');
+      overlay.classList.toggle('show');  
     }
   </script>
 
