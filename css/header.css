@@ -5,14 +5,10 @@ header {
   padding: 5px;
   align-items: center;
   background-color: var(--cor-principal);
-  border-bottom: 0.5px solid white;
   top: 0;
   width: 100%;
   position: fixed;
   z-index: 10000;
-}
-body{
-  padding-top: 120px;
 }
 
 .cima {
