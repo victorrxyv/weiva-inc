@@ -46,6 +46,8 @@ body {
   font-size: 19px;
 }
 
+/* card */
+
 .products {
   margin-top: 10px;
   padding: 5px;
@@ -53,6 +55,85 @@ body {
   white-space: nowrap;
   display: flex;
   gap: 40px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  min-width: 260px;
+  width: 260px;
+  height: 300px;
+  border-radius: 10px;
+  transition: 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  user-select: none;
+  
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+.product-card button {
+  border: none;
+  background-color: #DC143C;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  width: 80%;
+  height: 15%;
+  font-weight: 500;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #ff1544;
+  transform: scale(1.03);
+  font-weight: 600;
+  color: #e3e3e3;
+}
+
+
+.product-card h4, .product-card p {
+  margin: 13px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.product-card h4 {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  max-width: 240px;
+}
+
+.pharm-theme {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+
+.remedy {
+  margin-top: 5px;
+  width: 85px;
+}
+
+.pharm-theme p {
+  font-size: 14px;
+  color: #212121;
+}
+
+.suma {
+margin-bottom: 50px;
+color: transparent;
 }
 
 @media (max-width: 768px) {
