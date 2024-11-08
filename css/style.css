@@ -25,6 +25,7 @@ body {
 }
 
 .pharm-user {
+  margin-top: 10px;
   display: flex;
   align-items: center;
   padding: 0 !important;
@@ -53,7 +54,10 @@ body {
   padding: 5px;
   align-items: center;
   margin-top: 20px;
-  gap: 10px;
+  margin-bottom: 60px;
+  gap: 15px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .product-card {
@@ -62,8 +66,9 @@ body {
   align-items: center;
   justify-content: center;
   background-color: white;
-  width: 240px !important;
-  height: 280px !important;
+  min-width: 240px;
+  width: 240px;
+  height: 280px;
   padding: 10px;
   border-radius: 10px;
   transition: 0.3s;
