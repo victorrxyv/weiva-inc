@@ -62,7 +62,7 @@ body {
   align-items: center;
   background-color: white;
   min-width: 260px;
-  width: 260px;
+  width: auto;
   height: 300px;
   border-radius: 10px;
   transition: 0.3s;
@@ -95,17 +95,10 @@ body {
   color: #e3e3e3;
 }
 
-.product-card h4, .product-card p {
+.product-card p {
   margin: 13px;
   font-weight: 700;
   font-size: 20px;
-}
-
-.product-card h4 {
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  max-width: 240px;
 }
 
 .pharm-theme {
@@ -118,6 +111,24 @@ body {
   padding: 5px;
   border-bottom: 1px solid black;
 }
+
+.tittle-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  word-wrap: break-word; /* Permite quebra de palavras */
+  overflow-wrap: break-word; /* Mais específico para quebra de palavras longas */
+  width: 100%;
+  max-width: 100%; /* Garante que não ultrapasse a largura do card */
+  height: 40px; /* Defina uma altura fixa ou adequada para o título */
+  overflow: hidden; /* Garante que o texto não transborde visualmente */
+  text-overflow: ellipsis; /* Exibe "..." se o texto for muito longo para caber */
+  white-space: normal; /* Permite que o texto quebre em várias linhas */
+  margin: 0 10px; /* Ajusta as margens se necessário */
+}
+
 
 .remedy {
   margin-top: 5px;
@@ -157,19 +168,12 @@ body {
  font-size: 17px !important;
 }
 
-.product-card h4, .product-card p {
+.product-card p {
   margin: 5px 0;
   font-weight: 600;
   font-size: 17px;
 }
 
-
-.product-card h4 {
-  overflow: hidden;
-  margin: 0;
-  text-wrap: wrap;
-  padding: 5px;
-}
 
 .product-card {
   min-width: 160px;
