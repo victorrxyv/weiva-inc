@@ -183,7 +183,7 @@ header {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: none;
-  z-index: 5;
+  z-index: 10010;
 }
 
 .overlay.show {
