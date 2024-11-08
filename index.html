@@ -87,21 +87,21 @@
 
 
     <ul>
-      <li><a href="#" class="text-dark"><i class="bi bi-house"></i> Sobre</a></li>
       <li><a href="#" class="text-dark"><i class="bi bi-search"></i> Pesquisar</a></li>
       <li><a href="#" class="text-dark"><i class="bi bi-ticket-perforated"></i> Cupons</a></li>
       <li><a href="#" class="text-dark"><i class="bi bi-tags"></i> Ofertas do dia</a></li>
       <li><a href="#" class="text-dark"><i class="bi bi-bag"></i> Minhas Compras</a></li>
       <li><a href="#" class="text-dark"><i class="bi bi-heart"></i> Favoritos</a></li>
+      <li><a href="#" class="text-dark"><i class="bi bi-shop"></i> Farmácias</a></li>
+      <li><a href="#" class="text-dark"><i class="bi bi-star"></i> Mais vendidos</a></li>
       <li><a href="#" class="text-dark"><i class="bi bi-bell"></i> Notificações</a></li>
       <li><a href="#" class="text-dark"><i class="bi bi-bag"></i> Minhas Conta</a></li>
-      <li><a href="#" class="text-dark"><i class="bi bi-person"></i> Contato</a></li>
       <hr>
-      <li><a href="#" class="text-dark"><i class="bi bi-shop"></i> Lojas oficiais</a></li>
-      <li><a href="#" class="text-dark"><i class="bi bi-star"></i> Mais vendidos</a></li>
+      <li><a href="#" class="text-dark"><i class="bi bi-info-circle"></i> Sobre</a></li>
+      <li><a href="#" class="text-dark"><i class="bi bi-person"></i> Contato</a></li>
     </ul>
 
-    <footer class="container bg-dark text-light p-5">
+    <footer class="container bg-dark text-light p-2">
       <div class="row">
         <div class="col-12 text-center">
           WEIVA &copy;
@@ -162,7 +162,7 @@
 
   <section class="new-stock">
 
-    <h3><i class="bi bi-basket3-fill" id="cesta"></i> Adicionados ao estoque!</h3>
+    <h3><i class="bi bi-basket-fill" id="cesta"></i> Adicionados ao estoque!</h3>
 
     <div class="pharm-user">
       <div class="pharm-pict">
@@ -175,37 +175,58 @@
       </div>
     </div>
     
-    <div class="products">
+ <div class="products">
 
-      <div class="product-card">
-        <div class="pharm-theme">
-          <img class="pharm-perfil" src="./img/loiola-icon.png" width="22">
-          <p>Drogaria Loiola</p>
-        </div>
-        <img class="remedy" src="https://weiva-inc.vercel.app/imagens/dipirona.jpg" alt="Produto 1">
-        <div class="tittle-card">
-          Dipirona Monoidratada
-        </div>
-        <p>R$ 5.49</p>
-        <button onclick="addToCart('Dipirona Monoidratada', 5.49, 'imagens/dipirona.jpg', 'Drogaria Feitosa')">Adicionar
-          <i class="fa-solid fa-basket-shopping"></i></button>
-      </div>
+  <div class="product-card">
+    <div class="farm-user">
+      <p>Farmácia Loiola</p>
+      <button class="favoritar"><i class="bi bi-heart"></i></button>
+    </div>
+    <div class="product-photo">
+      <img class="remedy-defaut" src="./img/remedioDefaut.webp" alt="Remédio">
+    </div>
+    <div class="product-name">
+      sdds thaeme
+    </div>
+    <div class="product-price">
+      <p>R$ 24,69</p>
+    </div>
+    <button class="btn btn-danger"><i class="bi bi-basket-fill"></i> ADICIONAR</button>
+  </div>
 
-      <div class="product-card">
-        <div class="pharm-theme">
-          <img class="pharm-perfil" src="./img/loiola-icon.png" width="20">
-          <p>Drogaria Loiola</p>
-        </div>
-        <img class="remedy" src="https://weiva-inc.vercel.app/imagens/dipirona.jpg" alt="Produto 1">
-        <div class="tittle-card">
-          <strong>Dipirona Monoidratada</strong>
-        </div>
-        <p>R$ 20,00</p>
-        <button
-          onclick="addToCart('Nivea Hidratante Labial Original Care 4,8g', 20, 'imagens/nivea.webp', 'sdds thaeme')">Adicionar
-          <i class="fa-solid fa-basket-shopping"></i></button>
-      </div>
+  <div class="product-card">
+    <div class="farm-user">
+      <p>Farmácia Loiola</p>
+      <button class="favoritar"><i class="bi bi-heart"></i></button>
+    </div>
+    <div class="product-photo">
+      <img class="remedy-defaut" src="./img/remedioDefaut.webp" alt="Remédio">
+    </div>
+    <div class="product-name">
+      sdds thaeme
+    </div>
+    <div class="product-price">
+      <p>R$ 24,69</p>
+    </div>
+    <button class="btn btn-danger"><i class="bi bi-basket-fill"></i> ADICIONAR</button>
+  </div>
 
+  <div class="product-card">
+    <div class="farm-user">
+      <p>Farmácia Loiola</p>
+      <button class="favoritar"><i class="bi bi-heart"></i></button>
+    </div>
+    <div class="product-photo">
+      <img class="remedy-defaut" src="./img/remedioDefaut.webp" alt="Remédio">
+    </div>
+    <div class="product-name">
+      sdds thaeme
+    </div>
+    <div class="product-price">
+      <p>R$ 24,69</p>
+    </div>
+    <button class="btn btn-danger"><i class="bi bi-basket-fill"></i> ADICIONAR</button>
+  </div>
 
     </div>
 

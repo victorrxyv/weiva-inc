@@ -49,96 +49,76 @@ body {
 /* cards de produto */
 
 .products {
-  padding: 15px;
   display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  white-space: nowrap;
+  padding: 5px;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: white;
-  min-width: 260px;
-  width: auto;
-  height: 300px;
+  width: 240px !important;
+  height: 280px !important;
+  padding: 10px;
   border-radius: 10px;
   transition: 0.3s;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   user-select: none;
-  
+  overflow: hidden;
 }
 
-.product-card:hover {
-  transform: scale(1.03);
-}
-
-.product-card button {
-  border: none;
-  background-color: #DC143C;
-  border-radius: 5px;
-  padding: 5px;
-  color: white;
-  width: 80%;
-  height: 15%;
-  font-weight: 500;
-  margin-bottom: 5px;
-  transition: 0.3s;
-}
-
-.product-card button:hover {
-  background-color: #ff1544;
-  transform: scale(1.03);
-  font-weight: 600;
-  color: #e3e3e3;
-}
-
-.product-card p {
-  margin: 13px;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.pharm-theme {
+.farm-user {
   display: flex;
   align-items: center;
-  gap: 5px;
   width: 100%;
   text-align: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 5px;
   border-bottom: 1px solid black;
 }
 
-.tittle-card {
+.farm-user button {
+  background-color: transparent;
+  border: none;
+
+}
+
+.product-photo {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  word-wrap: break-word; /* Permite quebra de palavras */
-  overflow-wrap: break-word; /* Mais específico para quebra de palavras longas */
+  justify-content: center;
+}
+
+.product-photo img {
+  width: 50%;
+}
+
+.product-name {
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-align: left;
+  font-size: small;
   width: 100%;
-  max-width: 100%; /* Garante que não ultrapasse a largura do card */
-  height: 40px; /* Defina uma altura fixa ou adequada para o título */
-  overflow: hidden; /* Garante que o texto não transborde visualmente */
-  text-overflow: ellipsis; /* Exibe "..." se o texto for muito longo para caber */
-  white-space: normal; /* Permite que o texto quebre em várias linhas */
-  margin: 0 10px; /* Ajusta as margens se necessário */
 }
 
-
-.remedy {
-  margin-top: 5px;
-  width: 85px;
+.product-price {
+  font-size: 27px;
+  font-weight: 700;
+  text-align: left;
+  color: var(--cor-principal);
 }
 
-.pharm-theme p {
-  font-size: 14px;
-  color: #212121;
+.product-card button {
+  margin-bottom: 10px;
+  font-weight: 700;
 }
+
 
 @media (max-width: 768px) {
 /* perfil da farmácia na sessão*/
@@ -160,25 +140,7 @@ body {
 
 /* card de produto */
 
-.pharm-theme p {
-  font-size: 11px !important;
-}
-
-.sale p {
- font-size: 17px !important;
-}
-
-.product-card p {
-  margin: 5px 0;
-  font-weight: 600;
-  font-size: 17px;
-}
 
 
-.product-card {
-  min-width: 160px;
-  width: 160px;
-  height: 230px;
-}
 
 }
