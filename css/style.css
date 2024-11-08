@@ -26,8 +26,8 @@ body {
 
 .pharm-user {
   display: flex;
-  padding: 15px;
   align-items: center;
+  padding: 0 !important;
   gap: 5px;
 }
 
@@ -46,16 +46,20 @@ body {
   font-size: 19px;
 }
 
-/* card */
+/* cards de produto */
 
+
+/* div dos cards */
 .products {
   margin-top: 10px;
   padding: 5px;
   overflow-x: auto;
   white-space: nowrap;
   display: flex;
-  gap: 40px;
+  gap: 20px;
 }
+
+/*card em si */
 
 .product-card {
   display: flex;
@@ -69,46 +73,14 @@ body {
   transition: 0.3s;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   user-select: none;
-  
+  padding: 5px;
 }
 
 .product-card:hover {
   transform: scale(1.03);
 }
 
-.product-card button {
-  border: none;
-  background-color: #DC143C;
-  border-radius: 5px;
-  padding: 5px;
-  color: white;
-  width: 80%;
-  height: 15%;
-  font-weight: 500;
-  margin-bottom: 5px;
-  transition: 0.3s;
-}
-
-.product-card button:hover {
-  background-color: #ff1544;
-  transform: scale(1.03);
-  font-weight: 600;
-  color: #e3e3e3;
-}
-
-
-.product-card h4, .product-card p {
-  margin: 13px;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.product-card h4 {
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  max-width: 240px;
-}
+/* perfil da farmacia em cima do card*/
 
 .pharm-theme {
   display: flex;
@@ -121,22 +93,56 @@ body {
   border-bottom: 1px solid black;
 }
 
+
+.pharm-theme p {
+  font-size: 14px;
+  font-weight: 700 !important;
+  color: #212121;
+}
+
+
+.product-card button {
+  border: none;
+  background-color: #DC143C;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  width: 80%;
+  height: 15%;
+  font-weight: 500;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+
+.product-card button:hover {
+  background-color: #ff1544;
+  transform: scale(1.03);
+  font-weight: 600;
+  color: #e3e3e3;
+}
+
+
+.product-card h4, .product-card p {
+  margin: 10px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.product-card h4 {
+  white-space: nowrap; 
+  overflow: hidden;
+  max-width: 240px;
+}
+
 .remedy {
   margin-top: 5px;
   width: 85px;
 }
 
-.pharm-theme p {
-  font-size: 14px;
-  color: #212121;
-}
-
-.suma {
-margin-bottom: 50px;
-color: transparent;
-}
 
 @media (max-width: 768px) {
+/* perfil da farmácia na sessão*/
+
   .pharm-user {
     padding: 0px 0px 0px 15px;
   }
@@ -152,8 +158,31 @@ color: transparent;
     font-size: 10px;
 }
 
-  .pharm-theme p {
+/* card de produto */
+
+.product-card {
+  min-width: 160px;
+  width: 160px;
+  height: 230px;
+}
+
+.pharm-theme p {
     font-size: 11px !important;
+  }
+
+.product-card h4, .product-card p {
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+
+.product-card h4 {
+    white-space: nowrap; 
+    overflow: hidden;
+    margin: 0;
+    max-width: 160px;
+    padding: 5px;
   }
 
 }
