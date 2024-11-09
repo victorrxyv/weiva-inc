@@ -29,6 +29,8 @@ header {
 .nav-desktop a {
   color: white;
   text-decoration: none;
+  display: flex;
+  gap: 2px;
   font-size: 16px;
 }
 
