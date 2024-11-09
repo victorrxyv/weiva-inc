@@ -78,7 +78,7 @@ header {
     outline: none;
 }
 
-.chat-btn {
+.chat-btn, .dark-btn, .bell-btn {
   background-color: transparent;
   color: white;
   border: none;
@@ -160,6 +160,10 @@ header {
     text-decoration: none;
     font-weight: 600;
     text-align: center;
+  }
+
+  .dark-btn, .bell-btn {
+    display: none;
   }
 }
 

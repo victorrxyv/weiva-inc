@@ -14,13 +14,13 @@ body {
   background-color: var(--cor-de-fundo);
 }
 
-/* sessao de estoque  */
-.new-stock {
+/* sessao de estoque  */ /* maioria das sections seguem o mesmo estilo */
+.new-stock, .pharms-in-app {
   margin-top: 25px;
   padding: 10px;
 }
 
-#cesta{
+#cesta, #pharm{
   color: var(--cor-principal);
 }
 
@@ -47,14 +47,13 @@ body {
   font-size: 19px;
 }
 
-/* cards de produto */
+/* cards de produto */ /* maioria das sections seguem o mesmo estilo */
 
-.products {
+.products, .pharms {
   display: flex;
-  padding: 5px;
+  padding: 10px;
   align-items: center;
   margin-top: 20px;
-  margin-bottom: 60px;
   gap: 15px;
   overflow-x: auto;
   white-space: nowrap;
@@ -124,6 +123,44 @@ body {
   font-weight: 700;
 }
 
+/* estilo do card das farmacias */
+
+.pharms {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  margin-top: 20px;
+  gap: 100px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.card-pharm {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+}
+
+.card-pharm a {
+  text-decoration: none;
+}
+
+.card-pharm p {
+  margin: 0;
+  font-weight: 600;
+  color: black;
+}
+
+.card-pharm span {
+  color: #ffcf00;
+  background-color: rgba(0,0,0,0.4);
+  padding: 0 10px 0 10px;
+  border-radius: 15px;
+  font-size: 19px;
+}
+
 
 @media (max-width: 768px) {
 /* perfil da farmácia na sessão*/
@@ -141,6 +178,11 @@ body {
 }
  .pharm-desc span {
     font-size: 10px;
+}
+
+.pharms {
+  gap: 40px;
+  margin-bottom: 60px;
 }
 
 /* card de produto */
