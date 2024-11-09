@@ -1,0 +1,112 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+  }
+
+.lado-1 {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+.lado-2 {
+    width: 50%;
+    height: 100%;
+    background-color: #c11515;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.lado-2 img {
+    width: 70%;
+  }
+
+form {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+form p {
+    font-size: small;
+} 
+
+input {
+    width: 90%;
+    border: none;
+    padding: 10px;
+    background-color: #e6e6e6;
+    border-radius: 7px;
+}
+
+input:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.divider:before,
+.divider:after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 10px;
+}
+
+.another-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.another-login  button{
+    border: none;
+    font-size: xx-large;
+    background-color: transparent;
+    color: rgb(87, 87, 229);
+}
+
+@media (max-width: 768px) {
+    .lado-2 {
+        display: none;
+    }
+
+    .lado-1 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+   
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+}
