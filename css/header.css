@@ -14,8 +14,9 @@ header {
 .cima {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 10px;
+  margin: 0;
   width: 100%;
 }
 
@@ -86,15 +87,12 @@ header {
   margin-left: 10px;
 }
 
-.nav-links {
+.nav-logo {
   display: flex;
-  gap: 20px;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
+.nav-logo img {
+  width: 150px;
 }
 
 .nav-mobile {
@@ -121,6 +119,7 @@ header {
   color: white;
 }
 
+
 /* link da pagina acessada */
 
 .home span{
@@ -132,7 +131,7 @@ header {
     display: block;
   }
 
-  .nav-links {
+  .nav-logo {
     display: none;
   }
 
