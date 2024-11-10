@@ -115,6 +115,10 @@ header {
   gap: 5px;
 }
 
+.nav-user {
+  padding: 15px !important;
+}
+
 .nav-user p {
   margin: 0;
   font-size: 20px;
