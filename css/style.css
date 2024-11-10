@@ -15,12 +15,12 @@ body {
 }
 
 /* sessao de estoque  */ /* maioria das sections seguem o mesmo estilo */
-.new-stock, .pharms-in-app {
+.new-stock, .pharms-in-app,.sales-day, .daily-care {
   margin-top: 25px;
   padding: 10px;
 }
 
-#cesta, #pharm{
+#icon-h3{
   color: var(--cor-principal);
 }
 
@@ -50,10 +50,10 @@ body {
 /* cards de produto */ /* maioria das sections seguem o mesmo estilo */
 
 .products, .pharms {
-  display: flex;
+  display: flex !important;
   padding: 10px;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 15px;
   gap: 15px;
   overflow-x: auto;
   white-space: nowrap;
@@ -65,24 +65,28 @@ body {
   align-items: center;
   justify-content: center;
   background-color: white;
-  min-width: 240px;
-  width: 240px;
-  height: 280px;
-  padding: 10px;
+  min-width: 230px;
+  width: 230px;
+  height: 280px !important;
+  padding: 5px;
   border-radius: 10px;
   transition: 0.3s;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   user-select: none;
   overflow: hidden;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
 }
 
 .farm-user {
   display: flex;
   align-items: center;
   width: 100%;
-  text-align: center;
   justify-content: space-between;
-  padding: 5px;
+  margin: 0;
   border-bottom: 1px solid black;
 }
 
@@ -112,10 +116,28 @@ body {
 }
 
 .product-price {
-  font-size: 27px;
-  font-weight: 700;
-  text-align: left;
+  font-size: 22px;
+  font-weight: 500;
+  text-align: left !important;
+  display: flex;
   color: var(--cor-principal);
+}
+
+/* div que tem o preço antigo e o com desconto */
+
+.product-price-sale {
+  font-size: 22px;
+  font-weight: 500;
+  gap: 10px;
+  display: flex;
+}
+
+.product-price-sale p {
+  color: var(--cor-principal);
+}
+
+.product-price-sale span {
+  color: rgba(0, 0, 0, 0.286);
 }
 
 .product-card button {
@@ -182,7 +204,6 @@ body {
 
 .pharms {
   gap: 40px;
-  margin-bottom: 60px;
 }
 
 /* card de produto */
