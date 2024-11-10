@@ -36,6 +36,7 @@
 
 .lado-2 img {
     width: 70%;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
   }
 
 form {
@@ -47,8 +48,8 @@ form {
     gap: 15px;
   }
 
-form p {
-    font-size: small;
+form p:not(input) {
+    margin: 0;
 } 
 
 form h1 {
