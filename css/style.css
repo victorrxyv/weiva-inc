@@ -14,7 +14,7 @@ body {
   background-color: var(--cor-de-fundo);
 }
 
-/* sessao de estoque  */ /* maioria das sections seguem o mesmo estilo */
+/* seção de estoque  */ /* maioria das sections seguem o mesmo estilo */
 .new-stock, .pharms-in-app,.sales-day, .daily-care {
   margin-top: 25px;
   padding: 10px;
@@ -185,7 +185,7 @@ body {
 
 
 @media (max-width: 768px) {
-/* perfil da farmácia na sessão*/
+/* perfil da farmácia na seção*/
 
   .pharm-user {
     padding: 0px 0px 0px 15px;
@@ -205,10 +205,5 @@ body {
 .pharms {
   gap: 40px;
 }
-
-/* card de produto */
-
-
-
 
 }
