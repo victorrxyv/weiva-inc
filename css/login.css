@@ -70,6 +70,18 @@ input:focus {
     outline: none;
 }
 
+.creat-accont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.creat-accont a{
+   text-decoration: none;
+   color: #c11515;
+   font-weight: 500;
+} 
+
 .divider {
     display: flex;
     align-items: center;
@@ -99,6 +111,8 @@ input:focus {
     background-color: transparent;
     color: rgb(87, 87, 229);
 }
+
+
 
 @media (max-width: 768px) {
     body {
