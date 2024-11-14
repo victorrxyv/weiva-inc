@@ -1,0 +1,39 @@
+
+/*categoria*/
+
+#categoria-header {
+    position: fixed !important;
+    
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    height: calc(100dvh - 120px);
+    position: relative;
+    margin-top: 119px;
+}
+  
+.nav-container {
+    width: 15%;
+    background-color: red;
+    display: flex;
+    height: 100%;
+    position: fixed;
+}
+
+#nav-category {
+    height: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.all-pharms {
+    width: 85%;
+    padding: 10px;
+}
