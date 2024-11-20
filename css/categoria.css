@@ -1,39 +1,36 @@
 
 /*categoria*/
-
-#categoria-header {
-    position: fixed !important;
+.sidebar-categoria{
+    background-color: #e9e9e7;
+    height:  calc(100dvh - 122px);
     
 }
-
-main {
-    display: flex;
-    width: 100vw;
-    height: calc(100dvh - 120px);
-    position: relative;
-    margin-top: 119px;
+.sidebar-categoria ul{
+    list-style: none;
+    display: flex;  
+    flex-direction: column;
+    border: 1px solid;
+    padding: 0;
 }
-  
-.nav-container {
-    width: 15%;
-    background-color: red;
-    display: flex;
-    height: 100%;
-    position: fixed;
-}
+.sidebar-categoria ul li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+ }
+.sidebar-categoria ul li a .bi{
+    font-size: 1.5rem;
+ }
 
-#nav-category {
-    height: 100%;
-    background-color: #ffffff;
-    color: #000000;
+.sidebar-categoria ul li a{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    text-decoration: none;
+    color: #5F5F5F;
 }
 
-.all-pharms {
-    width: 85%;
-    padding: 10px;
+/*gambiarra*/
+.sidebar-categoria ul li:hover, .sidebar-categoria ul li a:hover{
+    background-color: #c11515;
+    color: #FFFFFF;
 }
