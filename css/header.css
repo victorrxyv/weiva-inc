@@ -81,11 +81,41 @@ header {
     outline: none;
 }
 
-.chat-btn, .dark-btn, .bell-btn {
+.header-btn {
+  display: flex;
+  align-items: center !important;
+  justify-content: center;
+  gap: 10px;
+
+}
+
+.user-btn-header {
+  display: flex;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  align-items: center;
+}
+
+.user-photo-header img {
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.user-name-header p {
+  margin: 0;
+}
+
+.user-name-header span {
+  font-weight: 650;
+  text-decoration: underline;
+}
+
+.dark-btn {
   background-color: transparent;
   color: white;
   border: none;
-  font-size: 30px;
+  font-size: 25px;
   cursor: pointer;
   margin-left: 10px;
 }
@@ -96,6 +126,8 @@ header {
 
 .nav-logo img {
   width: 150px;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
+
 }
 
 .nav-mobile {
@@ -123,13 +155,6 @@ header {
   margin: 0;
   font-size: 20px;
   color: white;
-}
-
-
-/* link da pagina acessada */
-
-.home span{
-  color: var(--cor-principal);
 }
 
 @media (max-width: 768px) {
@@ -164,11 +189,11 @@ header {
     flex-direction: column !important;
     color: #5f5f5f;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
   }
 
-  .dark-btn, .bell-btn {
+  .header-btn {
     display: none;
   }
 }
