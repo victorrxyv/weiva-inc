@@ -97,6 +97,14 @@ header {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
 .user-photo-header img {
   border-radius: 50%;
   margin: 5px;
