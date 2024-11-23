@@ -1,3 +1,7 @@
+:root {
+  --cor-de-fundo: #e6e6e6;
+  --cor-principal: #c11515;
+}
 
 header {
   display: flex;
@@ -165,6 +169,10 @@ a:visited {
   color: white;
 }
 
+.sidebar, .overlay {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .menu-hamburger {
     display: block;
@@ -240,6 +248,11 @@ a:visited {
   color: white;
   text-decoration: none;
   font-size: 18px;
+}
+
+.user-desc {
+  font-size: small !important;
+  font-weight: 600;
 }
 
 .overlay {
