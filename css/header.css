@@ -116,6 +116,7 @@ a:visited {
 
 .user-name-header p {
   margin: 0;
+  text-decoration: underline var(--cor-principal);
 }
 
 .user-name-header span {
