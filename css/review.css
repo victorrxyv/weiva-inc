@@ -11,9 +11,9 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(210, 210, 210) !important;
     color: #333;
     flex-direction: column;
+    background-color: rgb(224, 224, 224) !important;
 }
 
 
@@ -22,7 +22,7 @@ body {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background: #fff;
+    background-color: #eeeeee;
     border-radius: 5px;
 }
 
@@ -136,7 +136,7 @@ body {
 }
 
 .buy-now {
-   background-color: transparent;
+   background-color: white;
    border: 2px solid darkred;
    border-radius: 5px;
    font-weight: bold;
@@ -201,30 +201,15 @@ body {
     margin-top: 30px;
 }
 
-.related-grid {
- display: flex;
-  padding: 10px;
-  align-items: center;
-  margin-top: 15px;
-  gap: 15px;
-  overflow-x: auto;
-  white-space: nowrap;
-   
-}
-
-.related-item {
-    text-align: center;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+.products {
+    display: flex !important;
     padding: 10px;
+    align-items: center;
+    margin-top: 15px;
+    gap: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
 }
-
-.related-item img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
 
 /* estilo dos cards */
 
@@ -277,6 +262,10 @@ body {
   max-width: 50% !important;
 }
 
+.product-card-image a {
+    text-align: center;
+  }
+
 .details {
   padding: 10px;
   text-align: center;
@@ -299,28 +288,25 @@ body {
   text-align: left;
 }
 
-
-
 .add-to-cart-btn {
-  background-color: darkred;
-  color: #fff;
-  border: none;
-  text-align: center;
-  padding: 8px;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 80%;
-  transition: 0.3s;
-}
-
+    background-color: darkred;
+    padding: 5px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.3s;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: var(--cor-principal);
+  }
+  
 
 @media (max-width: 768px ) {
  .product-container {
  flex-direction: column;
  }
+ 
 }
