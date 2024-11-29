@@ -57,11 +57,16 @@ body {
 
 .product-info {
     flex: 1;
+    height: 100%;
+    padding: 10px;
+    border: 0.1px solid rgb(215, 215, 215);
+    border-radius: 10px;
 }
 
 .product-title {
-    font-size: 28px;
-    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .product-price {
