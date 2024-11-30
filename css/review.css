@@ -33,13 +33,14 @@ body {
 
 .product-images {
     flex: 1;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-images .main-image {
     max-width: 70%;
     border-radius: 8px;
-    margin-bottom: 15px;
 }
 
 /* .thumbnails img {
@@ -172,6 +173,12 @@ body {
 .action-profile-pharm-container {
     margin-top: 20px;
     width: 100%;
+    padding: 10px;
+    border-radius: 10px ;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(247, 247, 247);
+    gap: 10px;
 }
 
 .action-profile-pharm-container a {
@@ -193,6 +200,20 @@ body {
 
 .action-profile-pharm span {
     color: #ffcf00;
+}
+
+.action-profile-pharm-functions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.action-profile-pharm-functions button {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: rgb(208, 214, 255);
 }
 
 /* Reviews */
