@@ -174,6 +174,10 @@ a:visited {
   display: none;
 }
 
+.div-home-back {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .menu-hamburger {
     display: block;
