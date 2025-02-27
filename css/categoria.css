@@ -9,7 +9,6 @@
     list-style: none;
     display: flex;  
     flex-direction: column;
-    border: 1px solid;
     padding: 0;
 }
 .sidebar-categoria ul li{
@@ -20,17 +19,42 @@
     font-size: 1.5rem;
  }
 
+
 .sidebar-categoria ul li a{
+    word-wrap: break-word;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     color: #5F5F5F;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
 }
+
+.sidebar-categoria ul li a i {
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+  }
+
+  .sidebar-categoria ul li a span {
+    word-wrap: break-word;
+  }
+  
 
 /*gambiarra*/
 .sidebar-categoria ul li:hover, .sidebar-categoria ul li a:hover{
     background-color: #c11515;
     color: #FFFFFF;
 }
+
+
+/* ==================================== */
+
+  @media (max-width: 768px) {
+    .sidebar-categoria ul li a span {
+      font-size: 10px;
+    }
+  }
