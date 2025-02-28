@@ -73,7 +73,7 @@ include_once("includes/conexao.php");
                 </button>
             </div>
         </div>
-    </div>
+    </div>  
 
     <!--fim do carrosel-->
 

@@ -64,7 +64,7 @@
             // Consulta SQL (usando prepared statements para segurança)
             //$sql = "SELECT * FROM produto WHERE fk_categoria_id = (SELECT id FROM categoria WHERE nome = ?)";
             //$sql = "SELECT p.*, p.nome as pnome, c.* FROM produto p INNER JOIN categoria c ON p.fk_categoria_id = c.id WHERE c.nome = ?";
-            $sql = "SELECT p.*, p.id AS pidproduto, p.nome AS pnome, c.*, c.nome AS cnome, f.*, f.nome AS fnome FROM produto p INNER JOIN categoria c ON p.fk_categoria_id = c.id INNER JOIN farmacia f ON p.fk_farmacia_id = f.id  WHERE c.nome = ?";
+            $sql = "SELECT p.*, p.id AS pidproduto, p.nome AS pnome, p.descricao AS pdescricao, c.*, c.nome AS cnome, f.*, f.nome AS fnome FROM produto p INNER JOIN categoria c ON p.fk_categoria_id = c.id INNER JOIN farmacia f ON p.fk_farmacia_id = f.id  WHERE c.nome = ?";
 
             $stmt = $conn->prepare($sql);
 
@@ -102,7 +102,7 @@
                             <p class="product-name"><?php echo $row['pnome']; ?></p>
 
                             <!-- adicionado manualmente, verificar comportamento -->
-                            <p class="product-descricao"><?php echo $row['descricao']; ?></p>
+                            <p class="product-descricao"><?php echo $row['pdescricao']; ?></p>
 
                             <p class="price">R$ <?php echo $row['preco_unitario']; ?></p>
                             <div class="add-to-cart">
@@ -119,15 +119,15 @@
 
                       <?php
                       //listar farmacia com o fk
-                      // $row['fk_farmacia_id']
-                      //echo $row['descricao'];
+                      // echo $row['fk_farmacia_id']
+                      // echo $row['descricao'];
               
-                      //echo "<h2>Dados do registro:</h2>";
-                      //echo "<ul>";
-                      //foreach ($row as $campo => $valor) {
-                      //  echo "<li><strong>" . $campo . ":</strong> " . $valor . "</li>";
+                      // echo "<h2>Dados do registro:</h2>";
+                      // echo "<ul>";
+                      // foreach ($row as $campo => $valor) {
+                      //   echo "<li><strong>" . $campo . ":</strong> " . $valor . "</li>";
                       // }
-                      //echo "</ul>";
+                      // echo "</ul>";
               
                     } ?>
                   </div>
