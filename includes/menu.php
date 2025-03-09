@@ -56,7 +56,7 @@
             <span><i class="bi bi-house-door-fill"></i></span>
             <span>Ínicio</span>
         </a>
-        <a href="index.php?pages=categorias.php&cat-prod=medicamentos.php&categoria=Medicamentos">
+        <a href="index.php?pages=categorias.php&cat-prod=medicamentos.php&categoria=all">
             <span><i class="bi bi-table"></i></span>
             <span>Categoria</span>
         </a>
@@ -95,10 +95,26 @@
                 <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"
                     width="50" style="border-radius: 50%;">
             </div>
+            
             <div class="user-desc" style="color: white;">
-                <p>Olá, bem-vindo(a)!</p>
-                <a href="./login.php">
-                    <span>Entrar</span>
+                <?php if (isset($_SESSION['nome'])) {
+                    echo '<p>Ola, ' . $_SESSION['nome'] . '</p>';
+                    echo '
+                        <a href="#"><!--chamar o menu de perfil-->
+                        <span>MINHA CONTA <i class="bi bi-caret-down-fill"></i></span>
+                        </a><br>
+                        <a href="./includes/logout.php">
+                        <span><i class="bi bi-box-arrow-left"></i> SAIR</span>
+                        </a>
+                            ';
+                } else {
+                    echo '
+                        <p>Olá, bem-vindo(a)!</p>
+                        <a href="./login.php">
+                        <span>Entrar</span>
+                        </a>
+                    ';
+                } ?>
                 </a>
             </div>
         </div>

@@ -1,5 +1,4 @@
 <!--nav bar mobile-->
-
 <nav class="nav-mobile">
     <a href="index.php">
         <span><i class="bi bi-house-door-fill"></i></span>

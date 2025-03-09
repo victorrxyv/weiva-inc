@@ -25,6 +25,7 @@ include_once("includes/conexao.php");
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/categoria.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/review.css">
 
   <!--os elementos estão em ordem de acordo com a páginna, se um elemento está no final da página, o código dele tambem estará-->
 </head>
@@ -49,8 +50,8 @@ include_once("includes/conexao.php");
   } else {
     ?>
 
-    <!--carrosel de propaganda aparece em todas as paginas?-->
-    <div class="container-fluid">
+    <!--sistema gerenciar o carousel principal-->
+    <div class="container-fluid carousel-principal">
       <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide">
           <div class="carousel-indicators">
@@ -115,6 +116,7 @@ include_once("includes/conexao.php");
       </section>
     </div>
 
+
     <div class="container">
       <hr>
 
@@ -141,9 +143,6 @@ include_once("includes/conexao.php");
     <?php
   }
   ?>
-
-  </div>
-
 
   <!--seção de produtos adicionados ao estoque-->
   <!----
@@ -228,12 +227,25 @@ include_once("includes/conexao.php");
     <?php include_once('includes/navbarmobile.php') ?>
   </header>
 
+  <footer class="container-fluid bg-dark text-light p-2" style="margin-bottom: 60px;">
+    <div class="row">
+      <div class="col-12 text-center">
+        WEIVA &copy;
+      </div>
+
+      <div class="col-12 text-center">2024</div>
+    </div>
+
+  </footer>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.2/dist/sweetalert2.all.min.js"></script>
+
 
 </body>
 
