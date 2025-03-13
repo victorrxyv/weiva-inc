@@ -26,6 +26,7 @@ include_once("includes/conexao.php");
   <link rel="stylesheet" href="./css/categoria.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/review.css">
+  <link rel="stylesheet" href="./css/profile.css">
 
   <!--os elementos estão em ordem de acordo com a páginna, se um elemento está no final da página, o código dele tambem estará-->
 </head>
@@ -102,9 +103,10 @@ include_once("includes/conexao.php");
           $exeSql = mysqli_query($conn, $sql);
           $dd = mysqli_fetch_assoc($exeSql);
           while ($dado = mysqli_fetch_assoc($exeSql)) {
-            ?>
+            
+              ?>
             <div class="card-pharm">
-              <a href="#">
+              <a href="index.php?pages=profile-farm.php&id-farm=<?php echo $dado['id']?>">
                 <img src="./includes/<?php echo $dado['imagem_perfil'] ?>" width="70" alt="logo">
                 <p><?php echo $dado['nome'] ?></p>
                 <span><i class="bi bi-star-fill"> </i><?php echo $dado['avaliacao'] ?></span>

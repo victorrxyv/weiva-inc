@@ -4,7 +4,7 @@
         <span><i class="bi bi-house-door-fill"></i></span>
         <span>Ínicio</span>
     </a>
-    <a href="index.php?pages=categorias.php">
+    <a href="index.php?pages=categorias.php&cat-prod=medicamentos.php&categoria=all">
         <span><i class="bi bi-table"></i></span>
         <span>Categoria</span>
     </a>

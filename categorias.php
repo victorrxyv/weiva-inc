@@ -71,48 +71,48 @@
               $stmt->execute();
               $resultado = $stmt->get_result();
               ?>
-              <div class="container">
-                <div class="display-5 py-3">
-                  <?php echo htmlspecialchars($categoria == 'all' ? 'Todos os produtos' : $categoria); ?>
-                </div>
-                <div class="row g-4">
-                  <?php
-                  if ($resultado->num_rows > 0) {
-                    while ($row = $resultado->fetch_assoc()) {
-                      ?>
-                      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
-                        <div class="product-card">
-                          <div class="product-header">
-                            <img src="./includes/<?php echo htmlspecialchars($row['imagem_perfil']); ?>"
-                              alt="<?php echo htmlspecialchars($row['imagem_perfil']); ?>" class="logo">
-                            <span class="pharmacy-name"><?php echo htmlspecialchars($row['fnome']); ?></span>
-                            <span class="favorite"><i class="fa-regular fa-heart"> <?php echo $row['pidproduto']; ?></i></span>
-                          </div>
-                          <div class="product-card-image">
-                            <a href="index.php?pages=product-review.php&id-prod=<?php echo $row['pidproduto']; ?>">
-                              <img src="./<?php echo htmlspecialchars($row['caminho_galeria']); ?>" alt="Medicamento">
-                            </a>
-                          </div>
-                          <div class="details">
-                            <p class="product-name"><?php echo htmlspecialchars($row['pnome']); ?></p>
-                            <p class="product-descricao"><?php echo htmlspecialchars($row['pdescricao']); ?></p>
-                            <p class="price">R$ <?php echo number_format($row['preco_unitario'], 2, ',', '.'); ?></p>
-                            <div class="add-to-cart">
-                              <button class="add-to-cart-btn"
-                                onclick="addToCart('Weiva', <?php echo $row['preco_unitario']; ?>, 'img/generico.png', '<?php echo htmlspecialchars($row['fnome']); ?>')">
-                                <i class="bi bi-bag-check"></i> ADICIONAR <?php echo $row['pidproduto']; ?>
-                              </button>
-                            </div>
+
+              <div class="display-5 py-3 ">
+                <?php echo htmlspecialchars($categoria == 'all' ? 'Todos' : $categoria); ?>
+              </div>
+              <div class="row g-2">
+                <?php
+                if ($resultado->num_rows > 0) {
+                  while ($row = $resultado->fetch_assoc()) {
+                    ?>
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+
+                      <div class="product-card">
+                        <div class="product-header">
+                          <img src="./includes/<?php echo htmlspecialchars($row['imagem_perfil']); ?>"
+                            alt="<?php echo htmlspecialchars($row['imagem_perfil']); ?>" class="logo">
+                          <span class="pharmacy-name"><?php echo htmlspecialchars($row['fnome']); ?></span>
+                          <span class="favorite"><i class="fa-regular fa-heart"></i></span>
+                        </div>
+                        <div class="product-card-image">
+                          <a href="index.php?pages=product-review.php&id-prod=<?php echo $row['pidproduto']; ?>">
+                            <img src="./<?php echo htmlspecialchars($row['caminho_galeria']); ?>" alt="Medicamento">
+                          </a>
+                        </div>
+                        <div class="details">
+                          <p class="product-name"><?php echo htmlspecialchars($row['pnome']); ?></p>
+                          <p class="product-descricao"><?php echo htmlspecialchars($row['pdescricao']); ?></p>
+                          <p class="price">R$ <?php echo number_format($row['preco_unitario'], 2, ',', '.'); ?></p>
+                          <div class="add-to-cart">
+                            <button class="add-to-cart-btn"
+                              onclick="addToCart('Weiva', <?php echo $row['preco_unitario']; ?>, 'img/generico.png', '<?php echo htmlspecialchars($row['fnome']); ?>')">
+                              <i class="bi bi-bag-check"></i> ADICIONAR <?php echo $row['pidproduto']; ?>
+                            </button>
                           </div>
                         </div>
                       </div>
-                      <?php
-                    }
-                  } else {
-                    echo "<p>Nenhum produto encontrado para esta categoria.</p>";
+                    </div>
+                    <?php
                   }
-                  ?>
-                </div>
+                } else {
+                  echo "<p>Nenhum produto encontrado para esta categoria.</p>";
+                }
+                ?>
               </div>
               <?php
               $stmt->close();

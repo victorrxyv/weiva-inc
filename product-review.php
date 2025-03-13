@@ -2,93 +2,75 @@
 
 $id = mysqli_real_escape_string($conn, $_GET['id-prod']);
 
-$sqlExe = mysqli_query($conn, "SELECT * FROM produto WHERE id = $id");
+//$sqlExe = mysqli_query($conn, "SELECT * FROM produto WHERE id = $id");
 
-while($dado = mysqli_fetch_assoc($sqlExe)){
-echo $dado["id"];
-echo "<br>";
-echo $dado["nome"];
-echo "<br>";
-echo $dado["descricao"];
-echo "<br>";
-echo $dado["preco_unitario"];
-echo "<br>";
-echo $dado["descricao"];
-echo "<br>";
-echo $dado["descricao"];
-echo "<br>";
-echo $dado["descricao"];
-echo "<br>";
-echo $dado["descricao"];
-echo "<br>";
-echo $dado["descricao"];
+$sqlExe = mysqli_query($conn, "SELECT p.nome, p.preco_unitario, p.caminho_galeria, c.descricao, f.id, f.nome, f.avaliacao, f.imagem_perfil FROM produto p INNER JOIN farmacia f ON  p.fk_farmacia_id = f.id INNER JOIN categoria c ON  p.fk_categoria_id = c.id WHERE p.id = $id");
 
-
-}
-
-
-
+while ($dado = mysqli_fetch_assoc($sqlExe)) {
   ?>
 
-<main class="product-details">
-  <div class="product-container">
-    <div class="product-images">
-      <img src="../img/generico.png" alt="Main Product Image" class="main-image">
-    </div>
-
-    <div class="product-info">
-      <div class="product-title">
-        <div class="product-title-fav">
-          <button><i class="fa-regular fa-heart"></i></button>
-        </div>
-        <div class="product-title-name">
-          <h1>Lorem, ipsum dolor.</h1>
-        </div>
+  <main class="product-details">
+    <div class="product-container">
+      <div class="product-images">
+        <img src="./<?php echo $dado["caminho_galeria"]; ?>" alt="Main Product Image" class="main-image">
       </div>
-      <hr>
-      <p class="product-price">R$ 49.99</p>
-      <p class="product-description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente unde eius saepe, dignissimos aliquid esse
-        laborum quod optio inventore debitis sed non obcaecati repellat et eum odio perferendis placeat. Est.
-      </p>
-      <ul class="product-details-list">
-        <li><strong>Dosagem:</strong> 69mg.</li>
-        <li><strong>Forma Farmacêutica:</strong> Comprimido.</li>
-        <li><strong>Indicação: </strong> Alívio de dor.</li>
-      </ul>
 
-      <div class="product-actions">
-        <div class="product-actions-left">
-          <div class="quantity">
-            <label for="quantity">Quantidade:</label>
-            <input type="number" id="quantity" min="1" value="1">
+      <div class="product-info">
+        <div class="product-title">
+          <div class="product-title-fav">
+            <button><i class="fa-regular fa-heart"></i></button>
           </div>
-          <div class="add-and-buy">
-            <button class="add-to-cart-actions"><i class="bi bi-bag-check"></i> ADICIONAR</button>
-            <button class="buy-now"><i class="bi bi-cart-check"></i> COMPRAR</button>
+          <div class="product-title-name">
+            <h1><?php echo $dado["nome"]; ?></h1>
           </div>
         </div>
-      </div>
-      <div class="action-profile-pharm-container">
-        <a href="">
-          <div class="action-profile-pharm">
-            <img src="../img/loiola-icon.png" alt="Icon Loiola" width="60">
-            <div class="profile-pharm-desc">
-              <h5>Drogaria Loiola</h5>
-              <span><i class="bi bi-star-fill"></i></span>
-              <span><i class="bi bi-star-fill"></i></span>
-              <span><i class="bi bi-star-fill"></i></span>
-              <span><i class="bi bi-star-fill"></i></span>
-              <span><i class="bi bi-star-fill"></i></span>
+        <hr>
+        <p class="product-price">R$ <?php echo $dado["preco_unitario"]; ?></p>
+        <p class="product-description">
+          <?php
+          echo $dado["descricao"];
+          ?>
+        </p>
+        <ul class="product-details-list" style="color:red">
+          <li><strong>Dosagem:</strong> 69mg.</li>
+          <li><strong>Forma Farmacêutica:</strong> Comprimido.</li>
+          <li><strong>Indicação: </strong> <?php echo $dado['descricao'] ?></li>
+        </ul>
+
+        <div class="product-actions">
+          <div class="product-actions-left">
+            <div class="quantity">
+              <label for="quantity">Quantidade:</label>
+              <input type="number" id="quantity" min="1" value="1">
+            </div>
+            <div class="add-and-buy">
+              <button class="add-to-cart-actions"><i class="bi bi-bag-check"></i> ADICIONAR</button>
+              <button class="buy-now"><i class="bi bi-cart-check"></i> COMPRAR</button>
             </div>
           </div>
-        </a>
-        <div class="action-profile-pharm-functions">
-          <button><a href="../perfil/profile.html">Ver farmácia</a></button>
+        </div>
+        <div class="action-profile-pharm-container">
+          <a href="">
+            <div class="action-profile-pharm">
+              <img src="./includes/<?php echo $dado['imagem_perfil'] ?>" alt="Icon Loiola" width="60">
+              <div class="profile-pharm-desc">
+                <h5><?php echo $dado['nome'] ?></h5>
+                <span><i class="bi bi-star-fill"> </i><?php echo $dado['avaliacao'] ?></span>
+              </div>
+            </div>
+          </a>
+          <div class="action-profile-pharm-functions">
+            <button><a href="index.php?pages=profile-farm.php&id-farm=<?php echo $dado["id"]; ?>">Ver
+                farmácia</a></button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+
+
+    <?php
+}
+?>
 
   <!-- RSRS 
         <section class="product-reviews">
