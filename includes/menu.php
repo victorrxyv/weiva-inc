@@ -23,14 +23,20 @@
                 <div class="user-name-header">
                     <!-- precisa implementar um dropdown com a opcao meus dadps, minhas compras, perfil, sair -->
                     <?php if (isset($_SESSION['nome'])) {
-                        echo '<p>Ola, ' . $_SESSION['nome'] . '</p>';
                         echo '
-                        <a href="#"><!--chamar o menu de perfil-->
-                        <span>MINHA CONTA <i class="bi bi-caret-down-fill"></i></span>
-                        </a>
-                        <a href="./includes/logout.php">
-                        <span><i class="bi bi-box-arrow-left"></i>  SAIR</span>
-                        </a>
+                        <!--chamar o menu de perfil-->
+                        <div class="dropdown">
+                        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ' . $_SESSION['nome'] . '
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark"">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-person-lines-fill"></i> Meu perfil </a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-bag-check"></i> Minhas compras </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="./includes/logout.php">Sair <i class="bi bi-box-arrow-left"></i></a></li>
+                        </ul>
+                        </div>
+                        
                             ';
                     } else {
                         echo '
@@ -44,7 +50,7 @@
 
                 </div>
             </div>
-            <button class="dark-btn"><i class="bi bi-moon-stars-fill"></i></button>
+            <!-- <button class="dark-btn"><i class="bi bi-moon-stars-fill"></i></button> -->
         </div>
 
     </div>
@@ -95,7 +101,7 @@
                 <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg"
                     width="50" style="border-radius: 50%;">
             </div>
-            
+
             <div class="user-desc" style="color: white;">
                 <?php if (isset($_SESSION['nome'])) {
                     echo '<p>Ola, ' . $_SESSION['nome'] . '</p>';

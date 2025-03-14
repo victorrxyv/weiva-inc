@@ -4,9 +4,9 @@ include_once("conexao.php");
 //include_once("security.php");
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $senha = mysqli_real_escape_string($conn, $_POST['password']);
+
 //criptografar senha no banco na criacao do usuario 
 //$senha =  md5(md5(mysqli_real_escape_string($conn, $_POST['pass'])));
-
 
 $sqlLogar = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM usuario WHERE email = '$email' AND senha_hash = '$senha'"));
 if (empty($sqlLogar)) {
@@ -18,6 +18,8 @@ if (empty($sqlLogar)) {
        ';
     header("Location:../login.php");
 } else {
+
+    
     $cpf = md5(md5(str_replace('.', '', str_replace('-', '', $sqlLogar['cpf']))));
     //verificar se o usuario esta ativo -- igualmente para a farmacia
     if ($senha == $cpf) {
