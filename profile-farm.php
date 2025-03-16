@@ -53,13 +53,13 @@ while ($dados_farmacia = mysqli_fetch_assoc($sqlExe)) {
                         ?>
                         <div class="product-card" style="border: 1px solid red;">
                             <div class="product-header">
-                                <img src="./includes/<?php echo $dados_farmacia['imagem_perfil'] ?>" alt="Logo da Drogaria"
+                                <img src=" ./includes/<?php echo $dados_farmacia['imagem_perfil'] ?>" alt="Logo da Drogaria"
                                     class="logo">
                                 <span class="pharmacy-name"><?php echo $dados_farmacia['nome'] ?></span>
                                 <span class="favorite"><i class="fa-regular fa-heart"></i></span>
                             </div>
                             <div class="product-card-image">
-                                <a href="./review/product-review.html">
+                                <a href="index.php?pages=product-review.php&id-prod=<?php echo $dados_prod['id'] ?>">
                                     <img src="./<?php echo $dados_prod['caminho_galeria'] ?>" alt="Medicamento">
                                 </a>
                             </div>

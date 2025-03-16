@@ -208,6 +208,9 @@ body {
     justify-content: center;
 }
 
+.action-profile-pharm-functions a {
+    width: 100%;
+}
 .action-profile-pharm-functions button {
     width: 100%;
     border: none;

@@ -60,8 +60,9 @@ while ($dado = mysqli_fetch_assoc($sqlExe)) {
             </div>
           </a>
           <div class="action-profile-pharm-functions">
-            <button><a href="index.php?pages=profile-farm.php&id-farm=<?php echo $dado["id"]; ?>">Ver
-                farmácia</a></button>
+            <a href="index.php?pages=profile-farm.php&id-farm=<?php echo $dado["id"]; ?>">
+              <button>Ver farmácia</button>
+            </a>
           </div>
         </div>
       </div>
