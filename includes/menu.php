@@ -9,10 +9,12 @@
             <img src="./img/aweiva.png" alt="Logo">
         </nav>
 
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar na Weiva">
-            <button><i class="bi bi-search"></i></button>
-        </div>
+        <!-- barra depesquisa -->
+        <form class="search-bar" action="pesquisa.php" method="GET">
+            <input type="search" name="pesquisa" placeholder="Buscar na Weiva">
+            <button type="submit"><i class="bi bi-search"></i></button>
+        </form>
+
 
         <div class="header-btn">
             <div class="user-btn-header">

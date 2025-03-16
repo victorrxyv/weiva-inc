@@ -62,9 +62,9 @@ header {
     width: 100%;
     background-color: transparent;
     padding: 10px;
-    font-size: 18px;
     border-radius: 25px;
     border: none;
+    color: #ffffff;
 }
 
 .search-bar input::placeholder {
@@ -74,7 +74,7 @@ header {
 .search-bar button {
     background-color: rgba(240, 240, 240);
     border-radius: 0px 25px 25px 0px;
-    padding: 8px;
+    padding: 8px 30px;
     font-size: 13px;
     border: none;
     color: var(--cor-principal);

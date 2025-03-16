@@ -2,254 +2,280 @@
 session_start();
 include_once("../includes/conexao.php");
 include_once("./includes/security_admin.php");
-
 ?>
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!--icons bootstrap-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!--icons font awesome-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Weiva</title>
-  <link rel="icon" type="image/png" href="./img/phone-icon.png">
-  <!-- personaliza o topo -->
-  <link rel="stylesheet" href="./css/header.css">
-  <link rel="stylesheet" href="./css/categoria.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/review.css">
-  <link rel="stylesheet" href="./css/profile.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weiva Admin</title>
+  <link rel="icon" type="image/png" href="../includes/img/phone-icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-  <!--os elementos estão em ordem de acordo com a páginna, se um elemento está no final da página, o código dele tambem estará-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/searchpanes/2.0.0/css/searchPanes.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/searchbuilder/1.3.4/css/searchBuilder.dataTables.min.css">
+
+  <style>
+    body {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background: #343a40;
+      color: white;
+      padding: 15px;
+      position: fixed;
+      transition: width 0.3s;
+    }
+
+    .sidebar.collapsed {
+      width: 80px;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+
+    .sidebar a:hover {
+      background: #495057;
+    }
+
+    .sidebar i {
+      font-size: 1.5rem;
+      margin-right: 10px;
+    }
+
+    .sidebar.collapsed i {
+      margin-right: 0;
+    }
+
+    .sidebar span {
+      transition: opacity 0.3s, width 0.3s;
+    }
+
+    .sidebar.collapsed span {
+      opacity: 0;
+      width: 0;
+      overflow: hidden;
+    }
+
+    .sidebar.collapsed a:hover span {
+      opacity: 1;
+      width: auto;
+      margin-left: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+      position: absolute;
+      left: 80px;
+      white-space: nowrap;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 10px;
+      right: -20px;
+      background: #495057;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .content {
+      margin-left: 260px;
+      padding: 20px;
+      width: 100%;
+      transition: margin-left 0.3s;
+    }
+
+    .collapsed+.content {
+      margin-left: 90px;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>SUPRE ADM</h1>
-
-  <!-- importacao do menu -->
-  <header class="px-5">
-    <?php include_once('includes/menu.php') ?>
-  </header>
-
-  <!--fim do carrosel-->
-
-  <!-- inclui o conteudo da pagina caso a pagina exista -->
-
-
-  <?php
-  @$pagina = $_GET['pages'];
-
-  if (isset($pagina)) {
-    include $pagina;
-  } else {
-    ?>
-
-    <!--sistema gerenciar o carousel principal-->
-    <div class="container-fluid carousel-principal">
-      <div class="container">
-        <div id="carouselExampleIndicators" class="carousel slide">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-              aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-              aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-              aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active" id="carrosel">
-              <img src="./img/slide/1.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./img/slide/2.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="./img/slide/3.png" class="d-block w-100" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- feedback usuario -> exiibir a pagina inicial em caso de erro ou a 404 -->
-
-    <div class="container">
-      <hr>
-      <!--seção de farmácias-->
-      <section class="pharms-in-app">
-        <h3><i class="fa-solid fa-house-medical" id="icon-h3"></i> Farmácias na região</h3>
-
-        <div class="pharms">
-          <?php
-          $sql = "SELECT * FROM farmacia";
-          $exeSql = mysqli_query($conn, $sql);
-          $dd = mysqli_fetch_assoc($exeSql);
-          while ($dado = mysqli_fetch_assoc($exeSql)) {
-
-            ?>
-            <div class="card-pharm">
-              <a href="index.php?pages=profile-farm.php&id-farm=<?php echo $dado['id'] ?>">
-                <img src="./includes/<?php echo $dado['imagem_perfil'] ?>" width="70" alt="logo">
-                <p><?php echo $dado['nome'] ?></p>
-                <span><i class="bi bi-star-fill"> </i><?php echo $dado['avaliacao'] ?></span>
-              </a>
-            </div>
-
-          <?php } ?>
-        </div>
-      </section>
-    </div>
-
-
-    <div class="container">
-      <hr>
-
-      <!--seção de produtos com desconto-->
-      <section class="sales-day">
-        <h3><i class="bi bi-tags-fill" id="icon-h3"></i> Ofertas do dia!</h3>
-
-        <div class="products">
-        </div>
-      </section>
-    </div>
-
-    <!--seção de produtos relacionados a cuidados diários-->
-    <div class="container">
-      <hr>
-      <section class="daily-care">
-        <h3><i class="fa-solid fa-pump-medical" id="icon-h3"></i> Cuidados diários </h3>
-        <div class="products">
-
-        </div>
-      </section>
-    </div>
-
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" onclick="toggleMenu()">
+      <i class="bi bi-list"></i>
+    </button>
+    <h4 class="text-center">Admin</h4>
+    <a href="index.php"><i class="bi bi-house-door"></i> <span>Dashboard</span></a>
+    <a href="index.php?pages=usuarios.php"><i class="bi bi-people"></i> <span>Usuários</span></a>
+    <a href="index.php?pages=produtos.php"><i class="bi bi-box-seam"></i> <span>Produtos</span></a>
+    <a href="index.php?pages=farmacias.php"><i class="bi bi-prescription2"></i> <span>Farmacias</span></a>
+    <a href="index.php?pages=configuracao.php"><i class="bi bi-gear"></i> <span>Configurações</span></a>
+    <a href="./includes/logout.php"><i class="bi bi-box-arrow-right"></i> <span>Sair</span></a>
+  </div>
+  <div class="content">
     <?php
-  }
-  ?>
+    $pagina = isset($_GET['pages']) ? $_GET['pages'] : null;
 
-  <!--seção de produtos adicionados ao estoque-->
-  <!----
-  <div class="container">
+    if (isset($pagina)) {
+      include_once $pagina;
+    } else {
+      ?>
+      <!-- INICIO CONSULTAS -->
+      <?php
+      $sqlUsuario = mysqli_query($conn, "SELECT count(id) AS qntUsu FROM usuario");
+      $sqlProduto = mysqli_query($conn, "SELECT count(id) AS qntProd FROM produto");
+      $sqlFarmacia = mysqli_query($conn, "SELECT count(id) AS qntFarm FROM farmacia");
+      $du = mysqli_fetch_assoc($sqlUsuario);
+      $dp = mysqli_fetch_assoc($sqlProduto);
+      $df = mysqli_fetch_assoc($sqlFarmacia);
 
-    <section class="new-stock">
+      ?>
+      <!-- FIM CONSULTAS -->
 
-      <h3><i class="bi bi-basket-fill" id="icon-h3"></i> Adicionados ao estoque!</h3>
+      <h2>Bem-vindo, <?php echo $_SESSION['nome'] ?></h2>
+      <p>Aqui você pode gerenciar o sistema.</p>
 
-      <div class="pharm-user">
-        <div class="pharm-pict">
-          <img src="./img/loiola-icon.png" width="50">
-        </div>
-        <div class="pharm-desc">
-          <p>Drogaria Loiola</p>
-          <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-        </div>
-      </div>
 
-      <div class="products">
+      <h2>Dashboard</h2>
 
-        <div class="product-card">
-          <div class="product-header">
-            <img src="./img/loiola-icon.png" alt="Logo da Drogaria" class="logo">
-            <span class="pharmacy-name">Drogaria Loiola</span>
-            <span class="favorite"><i class="fa-regular fa-heart"></i></span>
+      <!-- Cards de Informações -->
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Usuários</h5>
+              <p class="card-text fs-3"><?php echo $du['qntUsu'] ?></p>
+            </div>
           </div>
-          <div class="product-card-image">
-            <a href="./review/product-review.html">
-              <img src="./img/generico.png" alt="Medicamento">
-            </a>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Produtos</h5>
+              <p class="card-text fs-3"><?php echo $dp['qntProd'] ?></p>
+            </div>
           </div>
-          <div class="details">
-            <p class="product-name">Medicamento genérico com um nome muito grandeKAKAKAKAKAKAAKAKAKAKAKAKAKAKAL</p>
-            <p class="price">R$ 69,24</p>
-            <div class="add-to-cart">
-              <button class="add-to-cart-btn"
-                onclick="addToCart('Weiva', 24.69, 'img/generico.png', 'Drogaria Loiola')">
-                <i class="bi bi-bag-check"></i> ADICIONAR
-              </button>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Farmacias</h5>
+              <p class="card-text fs-3"><?php echo $df['qntFarm'] ?></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-white bg-danger mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Faturamento</h5>
+              <p class="card-text fs-3">R$ 12.450</p>
             </div>
           </div>
         </div>
       </div>
 
-  
-        <div class="product-card">
-          <div class="farm-user d-flex justify-content-center">
-            <div class="row ">
-              <div class="col"><img src="./img/loiola-icon.png" height="25px"></div>
-              <div class="col">
-                <p>Drogaria Loiola</p>
-              </div>
-              <div class="col"><button class="favoritar"><i class="bi bi-heart"></i></button></div>
-            </div>
-          </div>
-
-          <div class="product-photo">
-            <img class="remedy-defaut" src="./img/remedioDefaut.webp" alt="Remédio">
-          </div>
-          <div class="product-name" >
-            <p style="text-align: justify; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quaerat consequatur nihil qui provident odit
-              possimus id sed quod ab? Et nam iusto iste assumenda ratione consectetur debitis nostrum tempora.
-            </p>
-          </div>
-          <div class="product-price">
-            <p>R$ 24,69</p>
-          </div>
-          <button class="btn btn-danger"><i class="bi bi-basket-fill"></i> ADICIONAR</button>
+      <!-- Gráficos -->
+      <div class="row">
+        <div class="col-md-6">
+          <canvas id="salesChart"></canvas>
         </div>
-      </div> -->
+        <div class="col-md-6">
+          <canvas id="usersChart"></canvas>
+        </div>
+      </div>
 
-  </section>
+      <!-- Tabela de Pedidos Recentes -->
+      <h3 class="mt-4">Últimos Pedidos</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>João Silva</td>
+            <td>Smartphone</td>
+            <td>R$ 2.500</td>
+            <td><span class="badge bg-success">Enviado</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Maria Oliveira</td>
+            <td>Notebook</td>
+            <td>R$ 4.200</td>
+            <td><span class="badge bg-warning">Pendente</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+
+      <?php
+    }
+    ?>
   </div>
 
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    }
 
+    // Gráfico de Vendas
+    var ctx1 = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai'],
+        datasets: [{
+          label: 'Vendas',
+          data: [300, 500, 700, 900, 1200],
+          borderColor: 'blue',
+          fill: false
+        }]
+      }
+    });
 
-  <!-- inclui a navbar mobile -->
-  <header class="px-5">
-    <?php include_once('includes/navbarmobile.php') ?>
-  </header>
+    // Gráfico de Usuários
+    var ctx2 = document.getElementById('usersChart').getContext('2d');
+    new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+        labels: ['Ativos', 'Inativos'],
+        datasets: [{
+          data: [120, 30],
+          backgroundColor: ['green', 'red']
+        }]
+      }
+    });
+  </script>
 
-  <footer class="container-fluid bg-dark text-light p-2" style="margin-bottom: 60px;">
-    <div class="row">
-      <div class="col-12 text-center">
-        WEIVA &copy;
-      </div>
-
-      <div class="col-12 text-center">2024</div>
-    </div>
-
-  </footer>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.2/dist/sweetalert2.all.min.js"></script>
-
-
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    }
+  </script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ include_once("includes/conexao.php");
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 
 <head>
   <meta charset="UTF-8">
@@ -44,10 +44,10 @@ include_once("includes/conexao.php");
 
 
   <?php
-  @$pagina = $_GET['pages'];
+  $pagina = isset($_GET['pages']) ? $_GET['pages'] : null;
 
   if (isset($pagina)) {
-    include $pagina;
+    include_once $pagina;
   } else {
     ?>
 
@@ -103,10 +103,10 @@ include_once("includes/conexao.php");
           $exeSql = mysqli_query($conn, $sql);
           $dd = mysqli_fetch_assoc($exeSql);
           while ($dado = mysqli_fetch_assoc($exeSql)) {
-            
-              ?>
+
+            ?>
             <div class="card-pharm">
-              <a href="index.php?pages=profile-farm.php&id-farm=<?php echo $dado['id']?>">
+              <a href="index.php?pages=profile-farm.php&id-farm=<?php echo $dado['id'] ?>">
                 <img src="./includes/<?php echo $dado['imagem_perfil'] ?>" width="70" alt="logo">
                 <p><?php echo $dado['nome'] ?></p>
                 <span><i class="bi bi-star-fill"> </i><?php echo $dado['avaliacao'] ?></span>

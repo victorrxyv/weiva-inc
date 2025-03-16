@@ -72,7 +72,7 @@
               $resultado = $stmt->get_result();
               ?>
 
-              <div class="display-5 py-3 ">
+              <div class="display-6 py-3 ">
                 <?php echo htmlspecialchars($categoria == 'all' ? 'Todos' : $categoria); ?>
               </div>
               <div class="row g-2">
@@ -84,10 +84,13 @@
 
                       <div class="product-card">
                         <div class="product-header">
-                          <img src="./includes/<?php echo htmlspecialchars($row['imagem_perfil']); ?>"
-                            alt="<?php echo htmlspecialchars($row['imagem_perfil']); ?>" class="logo">
-                          <span class="pharmacy-name"><?php echo htmlspecialchars($row['fnome']); ?></span>
+                          <a href="index.php?pages=profile-farm.php&id-farm=<?php echo $row["id"]; ?>" class="text-dark">
+                            <img src="./includes/<?php echo htmlspecialchars($row['imagem_perfil']); ?>"
+                              alt="<?php echo htmlspecialchars($row['imagem_perfil']); ?>" class="logo">
+                            <span class="pharmacy-name"><?php echo htmlspecialchars($row['fnome']); ?></span>
+                          </a>
                           <span class="favorite"><i class="fa-regular fa-heart"></i></span>
+
                         </div>
                         <div class="product-card-image">
                           <a href="index.php?pages=product-review.php&id-prod=<?php echo $row['pidproduto']; ?>">
