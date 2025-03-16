@@ -6,7 +6,7 @@
 - [x] preview produto
 - [x] carregar informacoes dos produtos
 - [x] perfil farmacia
-- [x] busca catalogo
+- [x] busca catalogo, nome, descricao, farmacia
 - [x] Painel Administrativo listando!
 - [ ] CRUD ADMIN
 - [ ] CRUD FARMACIA
