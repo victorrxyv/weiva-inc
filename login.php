@@ -37,12 +37,12 @@ session_start();
                     <label for="password">Senha</label>
                     <input type="password" placeholder="*******" name="password" id="password" required>
                     <button type="submit" class="btn btn-danger">Entrar</button>
-                    <div class="container">
+                    <div>
                         <?php
                         if (isset($_SESSION['login_erro'])) { ?>
 
-                            <div class="row p-2">
-                                <div class="col p-2">
+                            <div class="row">
+                                <div class="col">
                                     <?php echo $_SESSION['login_erro']; ?>
                                 </div>
                             </div>
