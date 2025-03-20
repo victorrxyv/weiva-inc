@@ -1,11 +1,20 @@
 <h2>Gerenciamento de Farmacias</h2>
+<?php
+if (isset($_SESSION['msn'])) {
+    echo $_SESSION['msn'];
+    unset($_SESSION['msn']);
+}
+?>
+
+
+
+
 <table id="usuariosTable" class="table table-striped">
     <thead>
         <tr>
             <th>ID</th>
             <th>Nome</th>
             <th>Email</th>
-            <th>Ativo</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -21,16 +30,21 @@
                 <td><?php echo $dd['nome'] ?></td>
                 <td><?php echo $dd['email'] ?></td>
                 <td>
-                    <a
-                        href="atualizar_status_usuario.php?id=<?php echo $dd['id']; ?>&ativo=<?php echo $dd['ativo'] == 1 ? 0 : 1; ?>">
-                        <?php echo $dd['ativo'] == 1 ? '<i class="bi bi-check-circle text-success"></i>' : '<i class="bi bi-ban text-danger"></i>' ?>
+
+                    <a href="./includes/atualizar_status_farmacia.php?id=<?php echo $dd['id']; ?>&ativo=<?php echo $dd['ativo'] == 1 ? 1 : 0; ?>"
+                        onclick="return confirm('Tem certeza de que deseja atualizar o status deste usuário?');"
+                        class="btn btn-custom <?php echo $dd['ativo'] == 1 ? 'btn-success' : 'btn-danger'; ?>">
+                        <i class="bi <?php echo $dd['ativo'] == 1 ? 'bi-check-circle' : 'bi-ban'; ?>"></i>
                     </a>
-                </td>
-                <td>
-                    <a href='editar_farmacia.php?id=<?php echo $dd['id'] ?>' class='btn btn-warning btn-sm'><i
-                            class="bi bi-pencil-square"></i> Editar</a>
-                    <a href='deletar_farmacia.php?id=<?php echo $dd['id'] ?>' class='btn btn-danger btn-sm'><i
-                            class="bi bi-trash3"></i> Excluir</a>
+
+                    <a href='editar_farmacia.php?id=<?php echo $dd['id'] ?>' class='btn btn-custom btn-warning'>
+                        <i class="bi bi-pencil-square"></i> Editar
+                    </a>
+
+                    <a href='deletar_farmacia.php?id=<?php echo $dd['id'] ?>' class='btn btn-custom btn-danger'
+                        onclick="return confirm('Tem certeza de que deseja excluir este usuário?');">
+                        <i class="bi bi-trash3"></i> Excluir
+                    </a>
                 </td>
             </tr>
 
