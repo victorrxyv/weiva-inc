@@ -25,7 +25,7 @@
 
 -   [x] Painel Farmacia
 
-    -   [ ] Relacionados no product-review
+    -   [ ] Relacionados no product-review - listar categoria do product
     -   [ ] localizacao
     -   [ ] busca catalogo
     -   [ ] social
@@ -39,10 +39,11 @@
 
 -   [ ] PERFIL USUARIO
 
-    -   [ ] Minha Conta
-    -   [ ] Perfil
+    -   [x] Minha Conta
+    -   [x] Perfil
     -   [ ] Cartões / Contas Bancárias
-    -   [ ] Endereços
+    -   [x] Endereços
+        -   [ ] editar
     -   [ ] Trocar Senha
     -   [ ] Preferências De Cookies
     -   [ ] Configurações De Privacidade
