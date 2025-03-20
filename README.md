@@ -48,13 +48,13 @@
     -   [ ] Preferências De Cookies
     -   [ ] Configurações De Privacidade
     -   [ ] Minhas Compras
-    -   [ ] Notificações
     -   [ ] Meus Cupons
 
 -   [ ] Banner farmacia -> anunciar na principal $
--   [ ] adicionar imagem no perfil do usuario -> gravatar
 
 #### Talves
 
+-   [ ] Notificações
+-   [ ] adicionar imagem no perfil do usuario -> gravatar
 -   [ ] controle quantidade | + | 6 | - |
 -   [ ] Ativar/Desativar usuarios (implementar modais)
