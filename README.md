@@ -36,9 +36,9 @@
     -   [ ] Ativar/Desativar produto
     -   [ ] Gerenciar card
         -   [ ] Publicar no prioncipal
+    -   [ ] Banner farmacia -> anunciar na principal $
 
 -   [ ] PERFIL USUARIO
-
     -   [x] Minha Conta
     -   [x] Perfil
     -   [ ] Cartões / Contas Bancárias
@@ -50,9 +50,7 @@
     -   [ ] Minhas Compras
     -   [ ] Meus Cupons
 
--   [ ] Banner farmacia -> anunciar na principal $
-
-#### Talves
+#### Talvez
 
 -   [ ] Notificações
 -   [ ] adicionar imagem no perfil do usuario -> gravatar
