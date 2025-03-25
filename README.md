@@ -24,10 +24,11 @@
     -   [x] Ativar/Desativar usuarios
 
 -   [x] Painel Farmacia
-    -   [x]criar nova cadegoria
-    -   [x]deletar nova cadegoria
-    -   [x]Cadastrando produto 
-    -   [ ]editar nova cadegoria
+
+    -   [x] criar nova cadegoria
+    -   [x] deletar nova cadegoria
+    -   [x] Cadastrando produto
+    -   [ ] editar nova cadegoria
 
     -   [ ] Relacionados no product-review - listar categoria do product
     -   [ ] localizacao
